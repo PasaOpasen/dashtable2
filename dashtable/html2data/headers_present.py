@@ -21,7 +21,7 @@ def headers_present(html_string):
     if not table:
         return False
 
-    th = table.findAll('th')
+    th = table.find_all('th')
     if len(th) > 0:
         return True
     else:
