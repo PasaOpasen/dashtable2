@@ -23,17 +23,17 @@ def get_html_column_count(html_string):
         return 0
 
     column_counts = []
-    trs = table.findAll('tr')
+    trs = table.find_all('tr')
     if len(trs) == 0:
         return 0
 
     for tr in range(len(trs)):
         if tr == 0:
-            tds = trs[tr].findAll('th')
+            tds = trs[tr].find_all('th')
             if len(tds) == 0:
-                tds = trs[tr].findAll('td')
+                tds = trs[tr].find_all('td')
         else:
-            tds = trs[tr].findAll('td')
+            tds = trs[tr].find_all('td')
 
         count = 0
         for td in tds:

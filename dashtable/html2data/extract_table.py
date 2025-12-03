@@ -37,14 +37,14 @@ def extract_table(html_string, row_count, column_count):
     if not table:
         return ''
 
-    trs = table.findAll('tr')
+    trs = table.find_all('tr')
     if len(trs) == 0:
         return [['']]
 
     for tr in range(len(trs)):
-        ths = trs[tr].findAll('th')
+        ths = trs[tr].find_all('th')
         if len(ths) == 0:
-            tds = trs[tr].findAll('td')
+            tds = trs[tr].find_all('td')
         else:
             tds = ths
 
